@@ -19,12 +19,6 @@ include $(call all-subdir-makefiles,$(LOCAL_PATH))
 PRODUCT_PACKAGES += \
     A11QSUI
 
-# TenX shade type
-PRODUCT_PACKAGES += \
-    TenXShadeTypeAccurate \
-    TenXShadeTypeGradient \
-    TenXShadeTypeAccurateGradient
-
 # Fonts
 PRODUCT_PACKAGES += \
     fonts_customization.xml \
@@ -301,50 +295,6 @@ PRODUCT_PACKAGES += \
     RiceBallsOverlay \
     IconShapeVesselOverlay
 
-# Volume Styles
-PRODUCT_PACKAGES += \
-    VolumeDoubleLayer \
-    VolumeGradient \
-    VolumeNeumorph \
-    VolumeNeumorphOutline \
-    VolumeOutline \
-    VolumeShadedLayer \
-    VolumeAOSPRevamped
-
-# Progressbar styles
-PRODUCT_PACKAGES += \
-    ProgressbarFilledOutlineThumbOverlay \
-    ProgressbarMinimalThumbOverlay \
-    ProgressbarBlockyThumbOverlay \
-    ProgressbarOutlineThumbOverlay \
-    ProgressbarOldschoolThumbOverlay \
-    ProgressbarNoThumbOverlay \
-    ProgressbarThinTrackOverlay \
-    ProgressbarInlineOverlay \
-    ProgressbarLightyOverlay
-
-# Brightness slider styles
-PRODUCT_PACKAGES += \
-    BrightnessSliderFilledOverlay \
-    BrightnessSliderThinOverlay \
-    BrightnessSliderAcunOverlay \
-    BrightnessSliderBangOverlay \
-    BrightnessSliderBangOverlay \
-    BrightnessSliderBang2Overlay \
-    BrightnessSliderNeumorphOverlay \
-    BrightnessSliderRealmeOverlay \
-    BrightnessSliderSemyOverlay \
-    BrightnessSliderSwapOverlay \
-    BrightnessSliderCyberpunkOverlay \
-    BrightnessSliderOutlineOverlay \
-    BrightnessSliderThinOutlineOverlay \
-    BrightnessSliderTranslucentOverlay \
-    BrightnessSliderLeafyOutlineOverlay \
-    BrightnessSliderMinimalThumbOverlay \
-    BrightnessSliderOldSchoolThumbOverlay \
-    BrightnessSliderRoundedClipOverlay \
-    BrightnessSliderThumbSliderOverlay
-
 # Navbar styles
 PRODUCT_PACKAGES += \
     NavbarAndroidOverlay \
@@ -365,16 +315,3 @@ PRODUCT_PACKAGES += \
 # Settings homepage avatar
 PRODUCT_PACKAGES += \
     SettingsHomepageAvatarOverlay
-
-ifeq ($(TARGET_HAS_UDFPS),true)
-PRODUCT_PACKAGES += \
-    UdfpsIcons \
-    UdfpsAnimations
-endif
-
-# Include {Lato,Rubik} fonts
-$(call inherit-product-if-exists, external/google-fonts/lato/fonts.mk)
-$(call inherit-product-if-exists, external/google-fonts/rubik/fonts.mk)
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/overlays/Elegance/fonts/prebuilt,$(TARGET_COPY_OUT_PRODUCT)/fonts)
